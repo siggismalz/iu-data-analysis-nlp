@@ -118,8 +118,10 @@ Textausschnitten und ersetzt keine systematische Bewertung durch mehrere Persone
 ## Quellen
 
 Chang, J., Boyd-Graber, J., Gerrish, S., Wang, C. & Blei, D. M. (2009).
-Reading tea leaves: How humans interpret topic models. In Advances in neural
-information processing systems 22. https://www.cs.columbia.edu/~blei/papers/ChangBoyd-GraberWangGerrishBlei2009a.pdf
+Reading tea leaves: How humans interpret topic models. In Y. Bengio,
+D. Schuurmans, J. Lafferty, C. Williams & A. Culotta (Hrsg.), *Advances in neural
+information processing systems* (Bd. 22, S. 288–296). Curran Associates.
+https://www.cs.columbia.edu/~blei/papers/ChangBoyd-GraberWangGerrishBlei2009a.pdf
 
 Danilak, M. (n.d.). langdetect. GitHub. https://github.com/Mimino666/langdetect
 
