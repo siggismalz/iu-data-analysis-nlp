@@ -1,0 +1,24 @@
+{
+  "archive_sha256": "a2ee5d14aae1dba483e70ae94a96af7f401a09fb1011028f44bc59a32138f453",
+  "total_rows": 1282355,
+  "empty_narratives": 898791,
+  "nonempty_narratives": 383564,
+  "duplicate_raw_texts": 16619,
+  "empty_after_basic_clean": 4,
+  "duplicate_normalized_texts": 21213,
+  "unique_clean_candidates": 362347,
+  "candidates_examined": 5459,
+  "language_rejected": 13,
+  "short_after_nlp": 444,
+  "duplicate_lemmas": 2,
+  "sample_size": 5000,
+  "sample_ids_sha256": "94b7e1e06af1c350b2b0a707ca24522bd2ddfeb7453bc4c48d68ac67eac55396",
+  "tokens_min_median_max": [
+    15,
+    62.5,
+    1286
+  ],
+  "sample_date_min": "2015-03-19",
+  "sample_date_max": "2019-03-14",
+  "seconds": 152.8
+}

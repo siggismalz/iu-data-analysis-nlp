@@ -1,0 +1,16 @@
+{
+  "lda": {
+    "suggested_k": 5,
+    "medoid_seed": 42,
+    "all_heuristic_criteria_met": true,
+    "best_cv_k": 5,
+    "status": "Vorauswahl; inhaltliche Prüfung erforderlich"
+  },
+  "nmf": {
+    "suggested_k": 5,
+    "medoid_seed": 17,
+    "all_heuristic_criteria_met": true,
+    "best_cv_k": 6,
+    "status": "Vorauswahl; inhaltliche Prüfung erforderlich"
+  }
+}

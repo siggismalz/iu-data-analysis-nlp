@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "sample_size": 5000,
+  "split": [
+    4000,
+    1000
+  ],
+  "model_runs": 57,
+  "idf_fitted_on_training_only": true,
+  "finite_metrics_or_explicitly_undefined": true,
+  "runs_with_undefined_coherence": 1,
+  "all_factors_normalized": true,
+  "method_tests": 4
+}

@@ -1,0 +1,16 @@
+{
+  "policy": "Nicht berechenbare Themenkohärenz bleibt undefiniert; betroffene k-Kandidaten werden nicht in die metrische Vorauswahl aufgenommen.",
+  "warnings": [
+    "divide by zero encountered in scalar divide",
+    "invalid value encountered in scalar divide"
+  ],
+  "affected_runs": [
+    {
+      "method": "lda",
+      "k": 20,
+      "seed": 42,
+      "undefined_topics": 1,
+      "missing_validation_topwords": "nsf"
+    }
+  ]
+}

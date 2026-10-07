@@ -1,0 +1,52 @@
+{
+  "lda": {
+    "k": 5,
+    "seed": 42,
+    "reason": "Fünf Themen erreichen den höchsten berechenbaren mittleren c_v-Wert (0,506) bei geringer Streuung (0,003) und Stabilität 0,859. Vier Themen sind stabiler (0,885), verlieren aber Kohärenz (0,477); sechs Themen sind weniger stabil (0,753). Die Sichtung zeigt fünf benennbare, teilweise überlappende Bereiche. LDA k=20 bleibt wegen eines in der Validierung fehlenden Topworts bei einem Startwert ohne Kohärenzmittelwert; zusätzlich entstehen dort kaum besetzte Themen.",
+    "metrics": {
+      "method": "lda",
+      "k": 5,
+      "cv_mean": 0.5064658903987586,
+      "cv_std": 0.0028355173059413,
+      "stability": 0.8594658872840455,
+      "stability_min": 0.8168565588881679,
+      "ari": 0.5500448509334702,
+      "loss_mean": 979.2848318940606,
+      "loss_std": 11.007212353240346,
+      "diversity": 0.7866666666666667,
+      "min_share": 0.108,
+      "max_topic_cosine": 0.5044517988246879,
+      "medoid_seed": 42,
+      "warnings": 0,
+      "undefined_topic_coherences": 0
+    }
+  },
+  "nmf": {
+    "k": 6,
+    "seed": 73,
+    "reason": "Die automatische Sparsamkeitsregel schlägt fünf Themen vor, weil deren Kohärenz höchstens 0,02 unter dem Maximum liegt. Nach inhaltlicher Sichtung werden sechs Themen gewählt: Sie erreichen das höchste mittlere c_v (0,531 ± 0,006), gegenüber 0,522 ± 0,031 bei fünf, und trennen Bankkonten von Kreditkarten. Stabilität 0,879 und mindestens 5,7 % dominante Validierungsdokumente je Thema über alle drei Seeds sind ausreichend nach dem Vorabplan. Sieben Themen (c_v=0,517) trennen Rückzahlungsprozesse zusätzlich, zehn (0,529) liefern eine ähnliche Kohärenz bei höherer Komplexität. Die Wahl sechs ist eine dokumentierte Abwägung und kein mathematischer Nachweis eines globalen Optimums.",
+    "metrics": {
+      "method": "nmf",
+      "k": 6,
+      "cv_mean": 0.5312552136123848,
+      "cv_std": 0.0060042864393495,
+      "stability": 0.8791093125644602,
+      "stability_min": 0.818537073160151,
+      "ari": 0.7920845121803591,
+      "loss_mean": 0.9379927675114242,
+      "loss_std": 0.0001616183927148,
+      "diversity": 0.9166666666666666,
+      "min_share": 0.057,
+      "max_topic_cosine": 0.2540009243079432,
+      "medoid_seed": 73,
+      "warnings": 0,
+      "undefined_topic_coherences": 0
+    }
+  },
+  "comparison": {
+    "dominant_assignment_ari_all": 0.37200886110285764,
+    "note": "ARI vergleicht Zuordnungen, ist kein Qualitätsmaß ohne Ground Truth."
+  },
+  "primary_method": "nmf",
+  "scope": "Gilt für die untersuchte Stichprobe und den geprüften Suchbereich; keine universell optimale Themenzahl."
+}

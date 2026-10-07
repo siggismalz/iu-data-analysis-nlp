@@ -1,0 +1,51 @@
+{
+  "sample_ids_sha256": "94b7e1e06af1c350b2b0a707ca24522bd2ddfeb7453bc4c48d68ac67eac55396",
+  "primary_method": "nmf",
+  "models": {
+    "lda": {
+      "k": 5,
+      "seed": 42,
+      "labels": [
+        "Auskunfteien und bestrittene Forderungen",
+        "Konten, Karten und Gebühren",
+        "Kontaktprobleme und Inkassoanrufe",
+        "Hypotheken und Darlehensunterlagen",
+        "Kreditraten und Rückzahlung"
+      ],
+      "notes": [
+        "Die Beispiele betreffen bestrittene Schulden, fehlerhafte Auskunfteieinträge und Nachweise. Der Bereich verbindet Auskunft und Inkasso; er trennt diese Anliegen nicht zuverlässig.",
+        "Starke Beispiele betreffen Überziehungsgebühren; zufällige Beispiele verlorene Karten und strittige Kontobelastungen. Das Thema bleibt ein breiter Bereich des Zahlungsverkehrs.",
+        "Die Ausschnitte zeigen wiederholte Inkassoanrufe, ausbleibende Rückrufe und erfolglose Kontaktversuche. Das Thema beschreibt häufig einen Beschwerdeprozess statt eines bestimmten Finanzprodukts.",
+        "Hypothekenänderungen und fehlende Darlehensunterlagen prägen die Beispiele. Ein zufälliger Text betrifft ein anderes Darlehen; daher ist eine ausschließlich auf Hypotheken begrenzte Bezeichnung zu eng.",
+        "Die Beispiele behandeln Rückzahlungspläne, Zinsen, Zahlungsbuchungen und Studienkredite. Die dominante Zuordnung vereinfacht Beschwerden, die zugleich Serviceprobleme enthalten."
+      ],
+      "reason": "Fünf Themen erreichen den höchsten berechenbaren mittleren c_v-Wert (0,506) bei geringer Streuung (0,003) und Stabilität 0,859. Vier Themen sind stabiler (0,885), verlieren aber Kohärenz (0,477); sechs Themen sind weniger stabil (0,753). Die Sichtung zeigt fünf benennbare, teilweise überlappende Bereiche. LDA k=20 bleibt wegen eines in der Validierung fehlenden Topworts bei einem Startwert ohne Kohärenzmittelwert; zusätzlich entstehen dort kaum besetzte Themen.",
+      "words_sha256": "029e1412a35d9cbcaf6d8a8cda2ab5c325993b23c3687b340d81d49e7e2eff19",
+      "review_scope": "Drei stark zugeordnete und zwei zufällige Textausschnitte je Thema; LDA bis 1050, NMF bis 950 Zeichen. Stichprobenartige Sichtung, keine systematische Bewertung durch mehrere Personen."
+    },
+    "nmf": {
+      "k": 6,
+      "seed": 73,
+      "labels": [
+        "Telefonkontakte und Kundenservice",
+        "Inkasso und Forderungsnachweise",
+        "Kredite, Hypotheken und Rückzahlung",
+        "Kontoführung und Kontostreitigkeiten",
+        "Kreditkarten und strittige Belastungen",
+        "Kreditauskünfte und Datenkorrekturen"
+      ],
+      "notes": [
+        "Starke Beispiele schildern unerwünschte Anrufe; ein zufälliger Ausschnitt betrifft widersprüchliche Auskünfte zur Kreditablösung. Deshalb umfasst das Label auch Kundenservice und nicht nur Telefonbelästigung.",
+        "Bestrittene oder nicht belegte Forderungen stehen im Vordergrund. Die Texte sind Behauptungen der Beschwerdeführenden; ein Rechtsverstoß wird daraus nicht abgeleitet.",
+        "Studienkredite, Hypotheken und Probleme bei Rückzahlungsplänen oder Zahlungsbuchungen werden zusammengefasst. Diese verbleibende Breite ist der Preis der übersichtlichen Auflösung mit sechs Themen.",
+        "Starke Beispiele betreffen Kontoeröffnung, Kontoschließung und Gebühren. Die zwei zufälligen Beispiele handeln dagegen vor allem von Auskunfteien beziehungsweise Inkasso. Häufige Wörter wie account können Fehlzuordnungen verursachen; das Label ist deshalb keine zuverlässige Einzelfallklassifikation.",
+        "Kreditkartenlimits, bestrittene Belastungen und Zinsabrechnungen bilden einen vom Bankkonto besser unterscheidbaren Bereich. Einzelne Beispiele verbinden diesen mit Identitätsmissbrauch oder Servicethemen.",
+        "Beanstandete Kreditanfragen, fehlerhafte Einträge und erfolglose Korrekturanträge stehen im Vordergrund. Dieses Thema überschneidet sich sachlich mit bestrittenen Forderungen."
+      ],
+      "reason": "Die automatische Sparsamkeitsregel schlägt fünf Themen vor, weil deren Kohärenz höchstens 0,02 unter dem Maximum liegt. Nach inhaltlicher Sichtung werden sechs Themen gewählt: Sie erreichen das höchste mittlere c_v (0,531 ± 0,006), gegenüber 0,522 ± 0,031 bei fünf, und trennen Bankkonten von Kreditkarten. Stabilität 0,879 und mindestens 5,7 % dominante Validierungsdokumente je Thema über alle drei Seeds sind ausreichend nach dem Vorabplan. Sieben Themen (c_v=0,517) trennen Rückzahlungsprozesse zusätzlich, zehn (0,529) liefern eine ähnliche Kohärenz bei höherer Komplexität. Die Wahl sechs ist eine dokumentierte Abwägung und kein mathematischer Nachweis eines globalen Optimums.",
+      "words_sha256": "c86a884b9e7b76c9dd78ae41f4b96222aca542aca12873ef50f565caba9485d0",
+      "review_scope": "Drei stark zugeordnete und zwei zufällige Textausschnitte je Thema; LDA bis 1050, NMF bis 950 Zeichen. Stichprobenartige Sichtung, keine systematische Bewertung durch mehrere Personen."
+    }
+  },
+  "discussion": "NMF mit sechs Themen wird für die übersichtliche Ergebnisdarstellung bevorzugt. Seine Kohärenz und Themenstabilität liegen im gewählten Vergleich über LDA mit fünf Themen; zugleich werden Bankkonten und Kreditkarten getrennt. Das bedeutet keine generell höhere Genauigkeit. Der Vergleich betrifft zwei vollständige Pipelines (Count/LDA und TF-IDF/NMF), sodass Unterschiede nicht allein einer Modellfamilie zugeschrieben werden können. Die Stichprobe enthält 14 sehr ähnliche Dokumentpaare (TF-IDF-Kosinus mindestens 0,95); eines verbindet Training und Validierung. Vorlagentexte und diese Überschneidung können Qualitätsmaße günstig beeinflussen. Weitere Grenzen sind die heuristische Sprach- und Entitätserkennung, entfernte Zahlen, Markenwörter, Bag-of-Words ohne Satzkontext und die dominante Zuordnung von Mehrthemenbeschwerden. Bei der Sichtung traten insbesondere im NMF-Kontothema unpassende Einzelfälle auf. Die Standardabweichungen und Anteilsspannen erfassen ausschließlich drei Startwerte, keine Stichprobenunsicherheit. Die Auswahl wurde im untersuchten Bereich k=4 bis 20 getroffen; nicht jede ganze Zahl dieses Bereichs wurde geprüft. Eine andere Vorverarbeitung, neue Stichprobe oder andere inhaltliche Granularität kann zu einer anderen Themenzahl führen."
+}

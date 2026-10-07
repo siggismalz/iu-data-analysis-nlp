@@ -1,0 +1,52 @@
+{
+  "train_documents": 4000,
+  "validation_documents": 1000,
+  "shape": [
+    5000,
+    3071
+  ],
+  "nonzero_entries": 249421,
+  "density": 0.016243633995441223,
+  "count_sparse_bytes": 3013056,
+  "tfidf_sparse_bytes": 3013056,
+  "pair_count": 44850,
+  "cosine_count_mean": 0.12222858812825904,
+  "cosine_tfidf_mean": 0.05840433624866651,
+  "nearest_neighbor_agreement": 0.42333333333333334,
+  "near_duplicate_pairs_at_0_95": 14,
+  "near_duplicate_cross_split_pairs": 1,
+  "top_count_terms": [
+    "credit",
+    "account",
+    "payment",
+    "report",
+    "pay",
+    "loan",
+    "tell",
+    "call",
+    "receive",
+    "time",
+    "no",
+    "debt",
+    "information",
+    "send",
+    "bank"
+  ],
+  "top_tfidf_terms": [
+    "credit",
+    "account",
+    "report",
+    "payment",
+    "loan",
+    "pay",
+    "debt",
+    "call",
+    "information",
+    "company",
+    "card",
+    "receive",
+    "bank",
+    "tell",
+    "time"
+  ]
+}
