@@ -20,8 +20,9 @@ Spracherkennung mit langdetect dient als Filter, nicht als garantierter Nachweis
 der Sprache jedes Textes (Danilak, n.d., Abschnitt Languages und Basic usage).
 Der Zufallsstartwert wird festgesetzt.
 
-spaCy segmentiert und lemmatisiert. Personen und Orte erkannte die kleine
-englische Pipeline nur heuristisch; ihre Tokens werden ausgeschlossen.
+spaCy segmentiert und lemmatisiert. Die englische Pipeline `en_core_web_sm`
+(Version 3.8.0; Explosion, 2024) erkennt Personen und Orte nur heuristisch;
+ihre Tokens werden ausgeschlossen.
 Organisationen werden beibehalten, weshalb Markennamen weiterhin Themen prägen
 können. Verneinungen bleiben als Wörter erhalten; ein Bag-of-Words-Modell bildet
 trotzdem weder Wortreihenfolge noch den Geltungsbereich einer Verneinung ab.
@@ -62,7 +63,8 @@ vollständige Konvergenz. Ein höheres Iterationsbudget kann die Ergebnisse änd
 Der vor dem Training festgehaltene [Versuchsplan](versuchsplan.md) beschreibt
 Startgitter, Verfeinerung und Auswahlregeln. Hauptmaß ist c_v nach Röder et al.
 (2015), implementiert in Gensim. Verwendet werden stets zehn Topwörter und
-dieselben Validierungstexte mit Fenstergröße 110. Die Statistik wird einmal für
+dieselben Validierungstexte mit Fenstergröße 110 (Řehůřek, 2024, Abschnitt
+CoherenceModel, Parameter window_size). Die Statistik wird einmal für
 alle Themenwortlisten aufgebaut. c_v ist eine auf Wort-Kookkurrenzen beruhende
 Näherung an Zusammenhang, kein Beweis sachlicher Richtigkeit.
 
@@ -125,18 +127,19 @@ https://www.cs.columbia.edu/~blei/papers/ChangBoyd-GraberWangGerrishBlei2009a.pd
 
 Danilak, M. (n.d.). langdetect. GitHub. https://github.com/Mimino666/langdetect
 
-Explosion. (n.d.). en_core_web_sm (Version 3.8.0) [Sprachmodell].
+Explosion. (30. September 2024). *en_core_web_sm* (Version 3.8.0) [Sprachmodell].
 https://github.com/explosion/spacy-models/releases/tag/en_core_web_sm-3.8.0
 
-Gensim developers. (n.d.). models.coherencemodel: Topic coherence pipeline.
-https://radimrehurek.com/gensim/models/coherencemodel.html
+Řehůřek, R. (10. August 2024). *models.coherencemodel: Topic coherence pipeline*.
+Gensim 4.3.3 documentation.
+https://radimrehurek.com/gensim/models/coherencemodel.html#gensim.models.coherencemodel.CoherenceModel
 
 Reyes, S. (13. Mai 2019). Consumer complaint database (Version 1) [Datensatz].
 Kaggle. https://www.kaggle.com/datasets/selener/consumer-complaint-database/versions/1
 
 Röder, M., Both, A. & Hinneburg, A. (2015). Exploring the space of topic coherence
-measures. In Proceedings of the eighth ACM international conference on web
-search and data mining (S. 399-408). ACM. https://doi.org/10.1145/2684822.2685324
+measures. In *Proceedings of the Eighth ACM International Conference on Web
+Search and Data Mining* (S. 399-408). ACM. https://doi.org/10.1145/2684822.2685324
 
 scikit-learn developers. (n.d.-a). Decomposing signals in components (matrix
 factorization problems). scikit-learn 1.8.0 documentation.
